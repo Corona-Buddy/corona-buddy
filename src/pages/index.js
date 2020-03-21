@@ -111,18 +111,18 @@ setTimeout(handleSubmit, 5000)
 
 const IndexPage = () => {
   const [posts, setPosts] = useState([])
-  // useEffect(() => {
-  //   chat.map().val(function(msg, id) {
-  //     if (!msg) {
-  //       return false
-  //     }
-  //     const lastPostIndex = posts.findIndex(x => x["_"]["#"] === id)
-  //     console.log("RING", msg)
-  //     if (lastPostIndex === -1) {
-  //       setPosts([...posts, msg])
-  //     }
-  //   })
-  // })
+  useEffect(() => {
+    chat.map().val(function(msg, id) {
+      if (!msg) {
+        return false
+      }
+      const lastPostIndex = posts.findIndex(x => x["_"]["#"] === id)
+      console.log("RING", msg)
+      if (lastPostIndex === -1) {
+        setPosts([...posts, msg])
+      }
+    })
+  })
   return (
     <Layout>
       <SEO title="Home" />
